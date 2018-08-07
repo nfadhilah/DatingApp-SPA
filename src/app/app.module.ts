@@ -32,6 +32,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 import { registerLocaleData } from '@angular/common';
 import localeId from '@angular/common/locales/id';
+import { ListResolver } from './_resolvers/list.resolver';
 
 registerLocaleData(localeId, 'id');
 
@@ -85,7 +86,8 @@ export function tokenGetter() {
     MemberListResolver,
     MemberEditResolver,
     PreventUnsavedChangesGuard,
-    {provide: LOCALE_ID, useValue: 'id'}
+    {provide: LOCALE_ID, useValue: 'id'},
+    ListResolver
   ],
   bootstrap: [AppComponent]
 })
