@@ -33,6 +33,8 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { registerLocaleData } from '@angular/common';
 import localeId from '@angular/common/locales/id';
 import { ListResolver } from './_resolvers/list.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 registerLocaleData(localeId, 'id');
 
@@ -53,7 +55,8 @@ export function tokenGetter() {
     MemberDetailComponent,
     MemberEditComponent,
     PhotoEditorComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    MemberMessagesComponent
   ],
   imports: [
     FileUploadModule,
@@ -87,7 +90,8 @@ export function tokenGetter() {
     MemberEditResolver,
     PreventUnsavedChangesGuard,
     {provide: LOCALE_ID, useValue: 'id'},
-    ListResolver
+    ListResolver,
+    MessagesResolver
   ],
   bootstrap: [AppComponent]
 })
